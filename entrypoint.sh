@@ -54,7 +54,7 @@ cp /etc/nginx/nginx.conf /home/container/nginx.conf
 if [ ! -z "$SERVER_PORT" ]
 then
     echo Listening to $SERVER_IP:$SERVER_PORT
-    sed -i'' "s/listen .*;/listen $SERVER_IP:$SERVER_PORT;/" /home/container/nginx.conf
+    sed -i'' "s/listen .*;/listen $SERVER_IP:80;/" /home/container/nginx.conf
 else
     >&2 echo "Error: SERVER_IP and SERVER_PORT should be defined by Pterodactyl allocation"
     exit 1
