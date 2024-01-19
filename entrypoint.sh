@@ -48,18 +48,6 @@ fi
 echo "Starting PHP..."
 php-fpm81 -F -O &
 
-# Start nginx in foreground
-echo "Preparing nginx.conf..."
-cp /etc/nginx/nginx.conf /home/container/nginx.conf
-if [ ! -z "$SERVER_PORT" ]
-then
-    echo Listening to $SERVER_IP:$SERVER_PORT
-    sed -i'' "s/listen .*;/listen $SERVER_IP:80;/" /home/container/nginx.conf
-else
-    >&2 echo "Error: SERVER_IP and SERVER_PORT should be defined by Pterodactyl allocation"
-    exit 1
-fi
-
 # Start nginx in the foreground
 echo "Starting nginx..."
 nginx -c /home/container/nginx.conf -e /home/container/log-nginx/nginx-error.log
