@@ -62,4 +62,4 @@ fi
 
 # Start nginx in the foreground
 echo "Starting nginx..."
-nginx -g 'daemon off;' -c /home/container/nginx.conf -e /home/container/log-nginx/nginx-error.log
+nginx -c /home/container/nginx.conf -e /home/container/log-nginx/nginx-error.log
