@@ -24,7 +24,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/mlhnono68/azuriom-egg
+          images: ghcr.io/IcyEndymion004/azuriom-egg
       - name: Build an egg pre-configured that docker image
         env:
           DOCKER_TAG: ${{ steps.meta.outputs.tags }}
